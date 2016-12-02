@@ -6,6 +6,7 @@ module.exports = YoutubeVideo = function(url, info) {
     this.info = info;
 };
 
+// Ew stop using prototypes
 YoutubeVideo.prototype.title = function () {
     return this.info.title;
 };
