@@ -238,13 +238,15 @@ function checkCmd(msg) {
 }
 
 function printCommands(msg) {
-    let cmdsString = "\nCommands:\n";
+    let cmdsString = "\n```Commands:\n";
     for (let cmd in commands) {
+        // Isn't this redundant? Obviously cmd is going to be a key in commands so when would this call?
         if (!commands[cmd]) continue;
         const cmdBody = commands[cmd];
         var argsDesc = cmdBody.argsDesc || '';
         cmdsString += `\n**!${cmd} ${argsDesc}** : ${cmdBody.desc}\n`;
     }
+    cmdsString += "```";
     msg.reply(cmdsString);
 }
 
